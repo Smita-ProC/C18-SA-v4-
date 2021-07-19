@@ -55,11 +55,15 @@ function setup() {
   invisibleGround = createSprite(200,190,400,10);
   invisibleGround.visible = false;
   
-  //create Obstacle and Cloud Groups
+  //create Obstacle and Cloud 
+
   obstaclesGroup = createGroup();
   cloudsGroup = createGroup();
   
   console.log("Hello" + 5);
+  
+  trex.setCollider("circle",0,0,40);
+  trex.debug = true
   
   score = 0;
 }
@@ -69,7 +73,8 @@ function draw() {
   //displaying score
   text("Score: "+ score, 500,50);
   
-  
+    console.log("this is ",gameState)
+
   
   if(gameState === PLAY){
      gameOver.visible = false
