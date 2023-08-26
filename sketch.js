@@ -42,14 +42,14 @@ function setup() {
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   
-    gameOver = createSprite(300,100);
-  gameOver.addImage(gameOverImg);
+ //create gameOver Sprite
+ // add image to gameOver sprite
+
+//create restart Sprite
+ // add image to restart sprite
   
-  restart = createSprite(300,140);
-  restart.addImage(restartImg);
+// adjust the scale
   
-  gameOver.scale = 0.5;
-  restart.scale = 0.5;
   invisibleGround = createSprite(200,190,400,10);
   invisibleGround.visible = false;
   
@@ -75,8 +75,7 @@ function draw() {
 
   
   if(gameState === PLAY){
-     gameOver.visible = false
-    restart.visible = false
+   //make gameOver and restart sprite invisible
     //move the ground
     ground.velocityX = -4;
     //scoring
@@ -106,10 +105,11 @@ function draw() {
   }
    else if (gameState === END) {
       ground.velocityX = 0;
-      gameOver.visible = true;
-    restart.visible = true;
+    
      obstaclesGroup.setVelocityXEach(0);
      cloudsGroup.setVelocityXEach(0);
+
+     //write condition to reset the game
    }
   
  
@@ -120,6 +120,9 @@ function draw() {
   
   drawSprites();
 }
+
+//create or define function reset()
+
 
 function spawnObstacles(){
  if (frameCount % 60 === 0){
